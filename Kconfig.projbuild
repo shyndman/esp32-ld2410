@@ -4,8 +4,10 @@ menu "Driver LD2410 presence sensor"
             
       config LD2410_UART_PORT_NUM
             int "UART port number"
-            range 0 2 if IDF_TARGET_ESP32 || IDF_TARGET_ESP32S3
-            default 2 if IDF_TARGET_ESP32 || IDF_TARGET_ESP32S3
+            range 0 4 if IDF_TARGET_ESP32P4
+            default 2 if IDF_TARGET_ESP32P4
+            range 0 2 if IDF_TARGET_ESP32 || IDF_TARGET_ESP32S3 || IDF_TARGET_ESP32C6 || IDF_TARGET_ESP32C5 || IDF_TARGET_ESP32C61
+            default 2 if IDF_TARGET_ESP32 || IDF_TARGET_ESP32S3 || IDF_TARGET_ESP32C6 || IDF_TARGET_ESP32C5 || IDF_TARGET_ESP32C61
             range 0 1
             default 1
             help
